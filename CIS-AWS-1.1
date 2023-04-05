@@ -1,0 +1,10 @@
+# Policy to enforce the control "1.1 Ensure multi-factor authentication (MFA) is enabled for all IAM users that have a console password"
+
+package cis.aws.mfa
+
+deny[msg] {
+  input.action = "iam:CreateUser"
+  not input.params.UserName
+  not input.params.Password
+  msg = "MFA must be enabled for all IAM users that have a console password."
+}
