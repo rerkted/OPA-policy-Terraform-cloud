@@ -2,7 +2,7 @@
 
 package terraform.enforce_s3_encryption
 
-import input.tevora as tevora
+import input.encryption as encryption
 
 allowed_acls = ["private"]
 allowed_sse_algorithms = ["aws:kms", "AES256"]
