@@ -8,7 +8,7 @@ allowed_acls = ["private"]
 allowed_sse_algorithms = ["aws:kms", "AES256"]
 
 s3_buckets[r] {
-    r := tevora.resource_changes[_]
+    r := encryption.resource_changes[_]
     r.type == "aws_s3_bucket"
 }
 
